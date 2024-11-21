@@ -1,0 +1,243 @@
+INDEX.HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analytics Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Analytics Tool</h1>
+        </header>
+        <main>
+            <div class="input-section">
+                <p>What can I help with?</p>
+                <div class="input-container">
+                    <input type="text" placeholder="Message ChatGPT" id="chatbot-input">
+                    <button class="send-button" id="send-chatbot-message">➤</button>
+                </div>
+            </div>
+            <div class="actions">
+                <a href="view_data/index.html"><button>View data</button></a>
+                <a href="analyze_data/index.html"><button>Analyze data</button></a>
+                <a href="brainstorm/index.html"><button>Brainstorm</button></a>
+                <a href="question_history/index.html"><button>Question History</button></a>
+                <a href="upload_data/index.html"><button>Upload data</button></a>
+            </div>
+        </main>
+        <footer>
+            <p>This chatbot can make mistakes. Check important info.</p>
+        </footer>
+    </div>
+
+    <!-- Collapsible Toolbar -->
+    <button id="toolbar-toggle-button" class="toolbar-toggle">≡</button>
+    <div id="toolbar" class="toolbar hidden">
+        <div class="toolbar-content">
+            <a href="index.html" class="toolbar-link">
+                <svg class="toolbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M10.9 2.1c.6-.4 1.4-.4 2 0l8 5.6c.5.4.8.9.8 1.5v10.4c0 1-.8 1.8-1.8 1.8h-4.8c-1 0-1.8-.8-1.8-1.8v-4h-2v4c0 1-.8 1.8-1.8 1.8H4c-1 0-1.8-.8-1.8-1.8V9.2c0-.6.3-1.2.8-1.5l8-5.6zm1 .9L4 8.6v10.6h4.8V15c0-.6.4-1 1-1h4.4c.6 0 1 .4 1 1v4.2H20V8.6L12 3z"/>
+                </svg>
+                Home
+            </a>
+            <a href="view_data/index.html" class="toolbar-link">View Data</a>
+            <a href="analyze_data/index.html" class="toolbar-link">Analyze Data</a>
+            <a href="brainstorm/index.html" class="toolbar-link">Brainstorm</a>
+            <a href="question_history/index.html" class="toolbar-link">Question History</a>
+            <a href="upload_data/index.html" class="toolbar-link">Upload Data</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+SCRIPT.JS:
+
+// Ensure the toggle button works for the collapsible sidebar
+document.getElementById("toolbar-toggle-button").addEventListener("click", () => {
+    const toolbar = document.getElementById("toolbar");
+    const toggleButton = document.getElementById("toolbar-toggle-button");
+
+    // Toggle the 'hidden' class on the toolbar
+    if (toolbar.classList.contains("hidden")) {
+        toolbar.classList.remove("hidden"); // Show the toolbar
+        toggleButton.style.backgroundColor = "#2ec4b6"; // Add background to the toggle button
+        toggleButton.style.borderRadius = "5px";
+    } else {
+        toolbar.classList.add("hidden"); // Hide the toolbar
+        toggleButton.style.backgroundColor = "transparent"; // Remove background color
+    }
+});
+
+STYLE.CSS:
+
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #27272F;
+    color: #edf2f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    font-size: 1.5rem;
+    color: #edf2f4;
+    margin-bottom: 20px;
+}
+
+/* Input section */
+.input-section p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #edf2f4;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #393943;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: #edf2f4;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.input-container .send-button {
+    background: none;
+    border: none;
+    color: #edf2f4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.input-container .send-button:hover {
+    color: #2ec4b6;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.actions button {
+    background-color: #393943;
+    border: 1px solid #444;
+    color: #edf2f4;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #2ec4b6;
+    color: #27272F;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #86868C;
+}
+
+/* Collapsible toolbar */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px; /* Reduced width */
+    background-color: #363640;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-200px); /* Move toolbar fully off-screen */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.toolbar:not(.hidden) {
+    transform: translateX(0); /* Slide toolbar into view */
+}
+
+.toolbar-content {
+    margin-top: 50px;
+    color: #edf2f4;
+    padding: 10px;
+}
+
+.toolbar-link {
+    text-decoration: none;
+    color: #edf2f4;
+    display: block;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.toolbar-link:hover {
+    color: #2ec4b6;
+    background-color: #393943;
+}
+
+.toolbar-icon {
+    margin-right: 10px;
+    fill: currentColor; /* SVG icon inherits text color */
+}
+
+/* Toolbar toggle button */
+.toolbar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent; /* Initially transparent */
+    color: #edf2f4;
+    border: none;
+    padding: 10px; /* Larger padding for bigger icon */
+    cursor: pointer;
+    font-size: 20px; /* Larger icon size */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1100;
+}
+
+.toolbar:not(.hidden) + .toolbar-toggle {
+    background-color: #2ec4b6;
+    border-radius: 5px;
+}
+
+.toolbar-toggle:hover {
+    background-color: #2bb89f;
+}

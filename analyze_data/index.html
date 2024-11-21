@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- View Data Title -->
+        <header id="header">
+            <h1>Analyze Data</h1>
+        </header>
+
+        <main>
+            <!-- Bottom Container -->
+            <div class="bottom-container" id="bottom-container">
+                <div class="chatbar">
+                    <input type="text" placeholder="Type your message here" id="chatbot-input">
+                    <button class="send-button" id="send-chatbot-message">➤</button>
+                </div>
+                <footer>
+                    <p>This chatbot can make mistakes. Check important info.</p>
+                </footer>
+            </div> 
+            <!-- Caret Button -->
+            <button id="collapse-chatbar" class="collapse-chatbar">⮟</button>           
+        </main>
+    </div>
+
+    <!-- Collapsible Toolbar -->
+    <button id="toolbar-toggle-button" class="toolbar-toggle">≡</button>
+    <div id="toolbar" class="toolbar hidden">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-link">
+                <svg class="toolbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M10.9 2.1c.6-.4 1.4-.4 2 0l8 5.6c.5.4.8.9.8 1.5v10.4c0 1-.8 1.8-1.8 1.8h-4.8c-1 0-1.8-.8-1.8-1.8v-4h-2v4c0 1-.8 1.8-1.8 1.8H4c-1 0-1.8-.8-1.8-1.8V9.2c0-.6.3-1.2.8-1.5l8-5.6zm1 .9L4 8.6v10.6h4.8V15c0-.6.4-1 1-1h4.4c.6 0 1 .4 1 1v4.2H20V8.6L12 3z"/>
+                </svg>
+                Home
+            </a>
+            <a href="../view_data/index.html" class="toolbar-link">View Data</a>
+            <a href="../analyze_data/index.html" class="toolbar-link active">Analyze Data</a>
+            <a href="../brainstorm/index.html" class="toolbar-link">Brainstorm</a>
+            <a href="../question_history/index.html" class="toolbar-link">Question History</a>
+            <a href="../upload_data/index.html" class="toolbar-link">Upload Data</a>
+        </div>
+    </div>   
+
+    
+
+    <!-- <div id="bottom-left-frame"></div> -->
+
+    <!-- <button id="collapse-bottom-button" class="collapse-bottom">⮝</button> -->
+    <script src="script.js"></script>
+    <script src="../chatbot.js"></script>
+
+</body>
+</html>

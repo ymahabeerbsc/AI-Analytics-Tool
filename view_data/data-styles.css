@@ -1,0 +1,259 @@
+.data-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.data-container-header h1 {
+    font-size: 1.5rem; /* Match the font size */
+    color: #edf2f4; /* Match the text color */
+    margin: 10px 0; /* Match the spacing */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Match the font family */
+    font-weight: bold; /* Add bold weight for a stronger appearance */
+    text-align: center; /* Center-align the title */
+    line-height: 1.2; /* Adjust line height for better spacing if needed */
+    background-color: transparent; /* Ensure no background */
+}
+
+
+/* Style "Search" bar to align with the title */
+.dataTables_filter {
+    margin: 0;
+}
+
+.dataTables_filter label {
+    color: #86868C; /* Set text color for "Search" to #86868C */
+}
+
+.dataTables_filter input {
+    background-color: #393943; /* Set the background to match the table */
+    color: #edf2f4; /* Light text */
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dataTables_filter input::placeholder {
+    color: #86868C; /* Placeholder text color */
+}
+
+/* Remove "Show Entries" and pagination */
+.dataTables_length,
+.dataTables_info,
+.dataTables_paginate {
+    display: none !important; /* Completely hide these elements */
+}
+
+/* Updated table frame background color */
+.table-frame {
+    background-color: #363640; /* Updated background color for the table frame */
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    max-height: 400px; /* Fixed height for the main table */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Scrollable table */
+.table-responsive {
+    display: block;
+    max-height: 400px; /* Set a fixed height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+    border-radius: 8px;
+    background-color: #393943; /* Background for the table itself */
+    border: none; /* No outer border */
+}
+
+/* Table styling */
+.table {
+    border-collapse: collapse;
+    background-color: #393943 !important; /* Updated background color for the table */
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Sticky table headers using CSS */
+.table th {
+    position: sticky;
+    top: 0;
+    z-index: 101; /* Ensure the header stays above content */
+    background-color: #27272F; /* Dark background for table headers */
+    color: #86868C !important; /* Set header text color to #86868C */
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 12px; /* Smaller font for header */
+    font-weight: 600;
+    padding: 8px 10px;
+    border-bottom: 0.5px solid #3A3A44; /* Solid border to define the bottom */
+    margin: 0; /* Remove any margin to avoid gaps */
+}
+
+/* Sticky headers for first and last columns with rounded edges */
+.table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Table data */
+.table th,
+.table td {
+    padding: 8px 10px; /* Reduce padding for shorter rows */
+    text-align: left;
+    font-size: 11px; /* Set font size to 11px */
+    color: #edf2f4; /* Light grayish white */
+    border: 0.5px solid #3A3A44; /* Thinner lines with color #3A3A44 */
+}
+
+/* Hover effect for table rows */
+.table-hover tbody tr {
+    background-color: #393943 !important; /* Background color of the row on hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table-hover tbody tr:hover,
+.table-hover tbody tr:hover td {
+    background-color: #2f2f38 !important; /* Darker background when hovered */
+    color: #86868C !important; /* Change text color to #86868C on hover */
+}
+
+/* Button styling */
+.btn-view {
+    background-color: #2ec4b6; /* Teal button background */
+    color: #edf2f4;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 10px; /* Smaller font for buttons */
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #2bb89f; /* Slightly darker teal hover */
+}
+
+/* Link styling */
+.link-action {
+    color: #8d99ae; /* Muted blue link */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-action:hover {
+    color: #edf2f4; /* Change link to white on hover */
+    text-decoration: underline;
+}
+
+/* Updated background color for the insights frame */
+#insight-frame {
+    background-color: #363640; /* Updated background color for the insights frame */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    color: #edf2f4;
+}
+
+/* Hidden class */
+.d-none {
+    display: none;
+}
+
+/* Insights content */
+.insight-content h3 {
+    margin-top: 0;
+    color: #2ec4b6;
+}
+
+.insight-content p {
+    margin-bottom: 10px;
+}
+
+/* Insight table adjustments */
+.insight-table-wrapper {
+    background-color: #393943; /* Same background color as the main table */
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 10px;
+    overflow-x: auto; /* Ensure horizontal scrolling if necessary */
+    max-height: 300px; /* Fixed height for the insights table */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.insight-table-wrapper table th {
+    position: sticky;
+    top: 0; /* Stick to the top */
+    z-index: 102; /* Ensure it stays above the table content when scrolling */
+    background-color: #27272F; /* Sticky header background */
+    color: #86868C; /* Header text color */
+    padding: 8px 10px;
+    width: max-content; /* Ensure headers are wide enough */
+    border-bottom: 0.5px solid #3A3A44; /* Add a bottom border to differentiate */
+    margin: 0; /* Remove margin to avoid gaps */
+}
+
+.insight-table-wrapper table th:first-child {
+    border-top-left-radius: 8px; /* Rounded corner on the top left */
+}
+
+.insight-table-wrapper table th:last-child {
+    border-top-right-radius: 8px; /* Rounded corner on the top right */
+}
+
+.insight-table-wrapper table td {
+    color: #edf2f4; /* Data text color */
+    border: 0.5px solid #3A3A44; /* Same border as the main table */
+}
+
+/* Highlighted row in the insights table */
+.table-row-highlight {
+    background-color: #2ec4b6 !important; /* Teal background for the highlighted row */
+    color: #edf2f4 !important; /* Ensure the text color remains visible */
+}
+
+/* Ensure the display frame is visible and styled like the other frames */
+#display-frame {
+    background-color: #363640; /* Same background as other frames */
+    padding: 20px;
+    margin-top: 20px; /* Space between the insights and display frames */
+    border-radius: 8px;
+    color: #edf2f4;
+    border: 1px solid #2ec4b6; /* Add a border to visually separate it */
+}
+
+/* Ensure the display frame is hidden initially but can be shown */
+.d-none {
+    display: none;
+}
+
+/* Make links styled as clickable */
+a.clickable {
+    color: #2ec4b6; /* Teal color for links */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.clickable:hover {
+    color: #2bb89f; /* Darker teal on hover */
+}
+
+/* Sticky title for Semantically Similar Suppliers */
+.sem-similar-title {
+    position: sticky;
+    top: 0;
+    z-index: 102; /* Ensure it stays on top of other content */
+    background-color: #27272F; /* Match the background color */
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #2ec4b6; /* Teal color for visibility */
+    font-size: 18px; /* Adjust title font size */
+    font-weight: bold;
+}
+

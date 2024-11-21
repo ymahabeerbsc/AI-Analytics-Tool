@@ -1,0 +1,178 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #27272F;
+    color: #edf2f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    font-size: 1.5rem;
+    color: #edf2f4;
+    margin-bottom: 20px;
+}
+
+/* Input section */
+.input-section p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #edf2f4;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #393943;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: #edf2f4;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.input-container .send-button {
+    background: none;
+    border: none;
+    color: #edf2f4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.input-container .send-button:hover {
+    color: #2ec4b6;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-button {
+    display: inline-block;
+    background-color: #393943;
+    border: 1px solid #444;
+    color: #edf2f4;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #2ec4b6;
+    color: #27272F;
+}
+
+.action-button.active {
+    background-color: #2ec4b6;
+    color: #27272F;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #86868C;
+}
+
+/* Collapsible toolbar */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #363640;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-200px);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.toolbar:not(.hidden) {
+    transform: translateX(0);
+}
+
+.toolbar-content {
+    margin-top: 50px;
+    color: #edf2f4;
+    padding: 10px;
+}
+
+.toolbar-link {
+    text-decoration: none;
+    color: #edf2f4;
+    display: block;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.toolbar-link:hover {
+    color: #2ec4b6;
+    background-color: #393943;
+}
+
+.toolbar-link.active {
+    color: #2ec4b6;
+    font-weight: bold;
+}
+
+.toolbar-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+/* Toolbar toggle button */
+.toolbar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    color: #edf2f4;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1100;
+}
+
+.toolbar:not(.hidden) + .toolbar-toggle {
+    background-color: #2ec4b6;
+    border-radius: 5px;
+}
+
+.toolbar-toggle:hover {
+    background-color: #2bb89f;
+}

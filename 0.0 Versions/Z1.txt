@@ -1,0 +1,155 @@
+INDEX.HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analytics Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Analytics Tool</h1>
+        </header>
+        <main>
+            <div class="input-section">
+                <p>What can I help with?</p>
+                <div class="input-container">
+                    <input type="text" placeholder="Message ChatGPT">
+                    <button class="send-button">➤</button>
+                </div>
+            </div>
+            <div class="actions">
+                <button>View data</button>
+                <button>Analyze data</button>
+                <button>Brainstorm</button>
+                <button>Question History</button>
+                <button>Upload data</button>
+            </div>
+        </main>
+        <footer>
+            <p>This chatbot can make mistakes. Check important info.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+STYLE.CSS:
+
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #27272F; /* Main background */
+    color: #edf2f4; /* Light grayish white text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Header */
+header {
+    font-size: 1.5rem;
+    color: #edf2f4;
+    margin-bottom: 20px;
+}
+
+/* Input section */
+.input-section p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #edf2f4;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #393943;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: #edf2f4;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.input-container .send-button {
+    background: none;
+    border: none;
+    color: #edf2f4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.input-container .send-button:hover {
+    color: #2ec4b6;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.actions button {
+    background-color: #393943;
+    border: 1px solid #444;
+    color: #edf2f4;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #2ec4b6;
+    color: #27272F;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #86868C;
+}
+
+SCRIPT.JS:
+
+// Placeholder for future interactive JavaScript functionality
+console.log("UI loaded successfully.");
+
+// Optional: Basic input handling for demonstration purposes
+document.getElementById("send-chatbot-message").addEventListener("click", () => {
+    const inputField = document.getElementById("chatbot-input");
+    const message = inputField.value.trim();
+
+    if (message) {
+        console.log(`User message: ${message}`);
+        inputField.value = ""; // Clear input after sending
+    } else {
+        console.log("No message entered.");
+    }
+});

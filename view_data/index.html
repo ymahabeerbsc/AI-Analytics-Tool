@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="data-styles.css">
+</head>
+<body>
+
+    <div class="data-container">
+        <!-- Data title and search bar outside the table frame -->
+        <!-- <div class="data-container-header">
+            <h1>View Data</h1>
+        </div> -->
+
+        <!-- Table frame -->
+        <div class="table-frame">
+            <!-- Scrollable Table -->
+            <div class="table-responsive">
+                <table id="data-table" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Purch. Doc.</th>
+                            <th>Plnt</th>
+                            <th>PGr</th>
+                            <th>Supplier/Supplying Plant</th>
+                            <th>POrg</th>
+                            <th>Material</th>
+                            <th>Short Text</th>
+                            <th>PO Item Text</th>
+                            <th>Requisnr.</th>
+                            <th>Cost Ctr</th>
+                            <th>Agreement Number</th>
+                            <th>Doc. Date</th>
+                            <th>Deliv. Date</th>
+                            <th>Net Price</th>
+                            <th>Activity</th>
+                            <th>Classified Activity</th>
+                            <th>Sub - Activity</th>
+                            <th>Classified Sub - Activity</th>
+                            <th>Timeline</th>
+                            <th>Current Status</th>
+                            <th>Current Owner</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data Rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="insight-frame" class="d-none">
+            <!-- Insights content will be dynamically added here -->
+        </div>
+        
+        <!-- New display frame to show data when clicked -->
+        <div id="display-frame" class="d-none">
+            <!-- Content will be loaded dynamically when a user clicks on Supplier, Activity, or Sub-Activity -->
+        </div>
+
+        <main>
+
+            <!-- Bottom Container -->
+            <div class="bottom-container" id="bottom-container">
+                <div class="chatbar">
+                    <input type="text" placeholder="Type your message here" id="chatbot-input">
+                    <button class="send-button" id="send-chatbot-message">➤</button>
+                </div>
+                <footer>
+                    <p>This chatbot can make mistakes. Check important info.</p>
+                </footer>
+            </div> 
+            <!-- Caret Button -->
+            <button id="collapse-chatbar" class="collapse-chatbar">⮟</button>           
+        </main>
+        
+    </div>
+
+    
+
+    <!-- Collapsible Toolbar -->
+    <button id="toolbar-toggle-button" class="toolbar-toggle">≡</button>
+    <div id="toolbar" class="toolbar hidden">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-link">
+                <svg class="toolbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M10.9 2.1c.6-.4 1.4-.4 2 0l8 5.6c.5.4.8.9.8 1.5v10.4c0 1-.8 1.8-1.8 1.8h-4.8c-1 0-1.8-.8-1.8-1.8v-4h-2v4c0 1-.8 1.8-1.8 1.8H4c-1 0-1.8-.8-1.8-1.8V9.2c0-.6.3-1.2.8-1.5l8-5.6zm1 .9L4 8.6v10.6h4.8V15c0-.6.4-1 1-1h4.4c.6 0 1 .4 1 1v4.2H20V8.6L12 3z"/>
+                </svg>
+                Home
+            </a>
+            <a href="../view_data/index.html" class="toolbar-link active">View Data</a>
+            <a href="../analyze_data/index.html" class="toolbar-link">Analyze Data</a>
+            <a href="../brainstorm/index.html" class="toolbar-link">Brainstorm</a>
+            <a href="../question_history/index.html" class="toolbar-link">Question History</a>
+            <a href="../upload_data/index.html" class="toolbar-link">Upload Data</a>
+        </div>
+    </div>   
+
+    
+
+    <!-- <div id="bottom-left-frame"></div> -->
+
+    <!-- <button id="collapse-bottom-button" class="collapse-bottom">⮝</button> -->
+     <!-- jQuery and DataTables JS -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+     <!-- PapaParse JS for parsing CSV -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+     <!-- Custom JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="data-script.js"></script>
+    <script src="../chatbot.js"></script>
+
+</body>
+</html>
