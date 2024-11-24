@@ -1,68 +1,68 @@
 # General utilities
-numpy==1.24.4
-pandas==1.5.3
-scipy==1.11.3
+numpy>=1.24.0,<1.25.0
+pandas>=1.5.0,<1.6.0
+scipy>=1.11.0,<1.12.0
 
 # Visualization
-matplotlib==3.8.0
-seaborn==0.12.2
-plotly==5.17.0
-bokeh==3.2.2
-dash==2.13.1
-altair==5.1.0
-pygal==3.0.1
+matplotlib>=3.8.0,<3.9.0
+seaborn>=0.12.0,<0.13.0
+plotly>=5.0.0,<6.0.0
+bokeh>=3.0.0,<4.0.0
+dash>=2.0.0,<3.0.0
+altair>=4.0.0,<6.0.0
+pygal>=2.0.0,<4.0.0
 
 # Data processing
-openpyxl==3.1.4   # Reading/writing Excel files
-xlrd==2.0.1       # Reading old Excel formats
-pyyaml==6.0.1     # YAML file support
-json5==0.9.11     # Enhanced JSON handling
-csvkit==1.1.1     # Advanced CSV handling
+openpyxl>=3.1.0,<4.0.0   # Reading/writing Excel files
+xlrd>=2.0.0,<3.0.0       # Reading old Excel formats
+pyyaml>=5.0.0,<7.0.0     # YAML file support
+json5>=0.9.0,<1.0.0      # Enhanced JSON handling
+csvkit>=1.0.0,<2.0.0     # Advanced CSV handling
 
 # File I/O
-pillow==10.1.1    # Image file processing
-python-docx==0.8.11  # Word file processing
-pytesseract==0.3.10  # OCR for reading text from images
+pillow>=10.0.0,<11.0.0    # Image file processing
+python-docx>=0.8.0,<1.0.0  # Word file processing
+pytesseract>=0.3.0,<1.0.0  # OCR for reading text from images
 
 # Web scraping & APIs
-requests==2.31.0
-beautifulsoup4==4.13.2
-lxml==4.10.0
+requests>=2.30.0,<3.0.0
+beautifulsoup4>=4.12.0,<5.0.0
+lxml>=4.9.0,<5.0.0
 
 # Mathematics and statistics
-sympy==1.12
-statsmodels==0.14.0
-scikit-learn==1.4.1
-networkx==3.2.1
+sympy>=1.10.0,<2.0.0
+statsmodels>=0.13.0,<0.15.0
+scikit-learn>=1.3.0,<1.5.0
+networkx>=3.0.0,<4.0.0
 
 # Machine learning and AI (optional)
-tensorflow==2.14.1
-torch==2.1.0
-transformers==4.36.0
+tensorflow>=2.14.0,<3.0.0
+torch>=2.0.0,<3.0.0
+transformers>=4.0.0,<5.0.0
 
 # Visualization helpers
-graphviz==0.20.1
-pydot==1.4.3
+graphviz>=0.19.0,<1.0.0
+pydot>=1.4.0,<2.0.0
 
 # Natural language processing (NLP)
-nltk==3.10
-spacy==3.8.0
+nltk>=3.8.0,<4.0.0
+spacy>=3.7.0,<4.0.0
 
 # Data format support
-h5py==3.10.0
-pyarrow==13.0.0
+h5py>=3.9.0,<4.0.0
+pyarrow>=12.0.0,<14.0.0
 
 # Time-series analysis
-tsfresh==0.20.1
+tsfresh>=0.19.0,<0.21.0
 
 # Distributed processing
-dask[complete]==2023.9.1
+dask[complete]>=2023.9.0,<2024.0.0
 
 # General helpers
-tqdm==4.65.1
+tqdm>=4.64.0,<5.0.0
 
 # Security and cryptography
-cryptography==41.1.1
+cryptography>=41.0.0,<42.0.0
 
 # Miscellaneous
-shap==0.42.0  # Explainable AI
+shap>=0.41.0,<0.43.0  # Explainable AI
