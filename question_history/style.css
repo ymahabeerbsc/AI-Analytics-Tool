@@ -6,283 +6,130 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align elements to the top */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start;
+    align-items: center;
     height: 100vh;
 }
 
-/* Container styling */
-.container {
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    margin-top: 0; /* Ensure no margin above the container */
+/* Page container styling */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Align with table max-width */
+    margin: 40px auto;
+    padding: 20px;
 }
 
-/* Header */
+/* Header styling */
 #header {
-    width: 100%;
-    background-color: transparent; /* Transparent background */
-    padding: 0;
-    margin: 0; /* No margin to ensure it sits flush with the top */
-    text-align: center;
+    width: 100%; /* Full width */
+    text-align: center; /* Center-align text */
+    margin-bottom: 20px; /* Add space below the header */
 }
 
 #header h1 {
-    font-size: 1.5rem;
-    color: #edf2f4;
-    margin: 10px 0; /* Slight spacing below the title */
+    font-size: 1.5rem; /* Match font size */
+    color: #edf2f4; /* Match text color */
+    margin: 10px 0;
+    font-weight: bold; /* Bold font */
+    line-height: 1.2;
 }
 
-/* Input section */
-.input-section {
+/* Chat container styling */
+#chat-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #363640;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space below header */
+    overflow-y: auto;
+}
+
+/* Chat logs section */
+#chat-logs {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 80px; /* Space above the bottom-container */
+    flex-direction: column; /* Stack logs vertically */
+    gap: 20px; /* Add space between sessions */
 }
 
-#chat-display {
-    width: calc(100% - 160px); /* Match the width of the chatbar */
-    max-width: 800px; /* Match the maximum width of the chatbar */
-    margin: 0 auto; /* Center the chat display */
-    padding: 10px;
-    background-color: #27272F; /* Match the page background */
-    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
-    color: #edf2f4;
-    overflow-y: auto; /* Enable scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    height: 250px; /* Fixed height for scrolling */
-    display: flex;
-    flex-direction: column; /* Stack bubbles vertically */
-    gap: 10px; /* Proper spacing between bubbles */
-    position: relative; /* Ensure it behaves predictably in layout */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-}
-
-/* Spacer for aligning chat bubbles at the bottom */
-#chat-display::before {
-    content: ''; /* Invisible content for spacing */
-    flex-grow: 1; /* Push content to the bottom */
-}
-
-
-/* Custom scrollbar for webkit browsers */
-#chat-display::-webkit-scrollbar {
-    display: none; /* Hides the scrollbar */
-}
-
-#chat-display::-webkit-scrollbar-thumb {
-    background-color: #2ec4b6; /* Thumb color */
-    border-radius: 4px; /* Rounded scrollbar corners */
-}
-
-#chat-display::-webkit-scrollbar-track {
-    /* background-color: #27272F; Track background color */
-    display: none; /* Hides the scrollbar */
-}
-
-
-/* Chat bubbles */
-.chat-bubble {
+/* Individual session styling */
+.session {
+    background: #393943;
     padding: 10px;
     border-radius: 8px;
-    margin: 5px 0;
-    max-width: 80%; /* Limit bubble width */
-    word-break: break-word;
-    text-align: left;
+    border: 1px solid #3A3A44;
+}
+
+.session h2 {
+    font-size: 18px;
+    color: #86868C; /* Muted text color */
+    margin: 0 0 10px;
+}
+
+/* Individual message styling */
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 800px;
+    position: relative;
 }
 
 /* User messages */
-.chat-bubble.user {
-    align-self: flex-end; /* Align user messages to the right */
-    background-color: #2ec4b6;
+.message.user {
+    background: #2ec4b6; /* Teal background */
     color: #27272F;
+    margin-left: auto; /* Align to the right */
+    text-align: right;
 }
 
 /* Bot messages */
-.chat-bubble.bot {
-    align-self: flex-start; /* Align bot messages to the left */
-    background-color: #444;
+.message.bot {
+    background: #444; /* Dark gray */
     color: #edf2f4;
 }
 
-/* Chat images */
-.chat-image {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-
-
-/* Collapse button styling */
-.collapse-chatbar {
-    position: fixed; /* Position relative to the viewport */
-    right: 20px; /* Position it away from the right edge */
-    bottom: 40px; /* Place it above the bottom container */
-    background-color: #2ec4b6; /* Caret button color */
-    color: #27272F; /* Icon color */
-    border: none;
-    border-radius: 50%; /* Circular shape */
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 24px; /* Size of caret icon */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
-    z-index: 1200; /* Ensure it appears above all other elements */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.collapse-chatbar:hover {
-    background-color: #2bb89f; /* Change color on hover */
-}
-
-/* Bottom container */
-.bottom-container {
-    position: fixed; /* Fix positioning to align everything at the bottom */
-    bottom: 0; /* Initially aligned at the very bottom */
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0; /* Remove gap between chatbar and footer */
-    background-color: #27272F;
-    padding: 0; /* Remove padding for spacing */
-    z-index: 1000; /* Ensure it appears above other elements */
-    transition: bottom 0.3s ease; /* Smooth transition for collapsing */
-}
-
-/* Collapsed state for the bottom container */
-.bottom-container:not(.visible) {
-    opacity: 0; /* Make it invisible */
-    visibility: hidden; /* Remove it from screen readers and interaction */
-}
-
-/* Typing Indicator */
-.typing-indicator {
-    display: flex;
-    gap: 5px;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 5px 0; /* Space around the indicator */
-    background: none; /* Remove background color */
-    border: none; /* Remove border */
-    padding: 0; /* Remove padding */
-}
-
-.typing-indicator span {
-    width: 8px;
-    height: 8px;
-    background-color: #444; /* Dot color */
-    border-radius: 50%; /* Circular dots */
-    animation: bounce 1.2s infinite ease-in-out;
-}
-
-.typing-indicator span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes bounce {
-    0%, 80%, 100% {
-        transform: scale(0); /* Dots shrink */
-    }
-    40% {
-        transform: scale(1); /* Dots expand */
-    }
-}
-
-
-/* Chatbar styling */
-.chatbar {
-    position: relative; /* Enables absolute positioning for child elements */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Proper alignment for input and button */
-    background-color: #393943;
-    padding: 10px;
-    border-radius: 10px;
-    width: calc(100% - 160px); /* Leave exactly 80px from either side */
-    max-width: 800px;
-    margin: 0 auto; /* Center the chatbar */
-    position: relative; /* Keeps positioning intact */
-    margin-bottom: 0; /* Remove gap below the chatbar */
-}
-
-/* Chatbar input */
-.chatbar input {
-    flex: 1;
-    background-color: transparent;
-    border: none;
-    color: #edf2f4;
-    outline: none;
-    font-size: 1rem;
-    padding: 5px;
-}
-
-.chatbar .send-button {
-    background: none;
-    border: none;
-    color: #edf2f4;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.chatbar .send-button:hover {
-    color: #2ec4b6;
-}
-
-/* Footer */
-footer {
-    font-size: 0.8rem;
+/* Timestamp styling */
+.timestamp {
+    font-size: 12px;
     color: #86868C;
-    text-align: center;
-    margin: 0 auto; /* Center the footer */
-    padding: 0; /* Remove all padding */
-    position: relative;
-    bottom: 0; /* Footer is flush with the bottom */
+    margin-top: 5px;
+    text-align: right;
 }
 
-/* Action buttons */
-.actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.action-button {
-    display: inline-block;
-    background-color: #393943;
-    border: 1px solid #444;
-    color: #edf2f4;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.action-button:hover {
+/* Button styling */
+.btn-view {
     background-color: #2ec4b6;
-    color: #27272F;
+    color: #edf2f4;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #2bb89f;
+}
+
+/* Link styling */
+.link-action {
+    color: #8d99ae; /* Muted blue link */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-action:hover {
+    color: #edf2f4; /* Change to white on hover */
+    text-decoration: underline;
 }
 
 /* Toolbar styling */
@@ -313,8 +160,8 @@ footer {
 .toolbar-link {
     text-decoration: none;
     color: #edf2f4;
-    display: flex; /* Ensure icon and text align properly */
-    align-items: center; /* Vertically center the icon and text */
+    display: flex;
+    align-items: center;
     font-size: 0.9rem;
     padding: 10px 15px;
     transition: color 0.3s, background-color 0.3s;
@@ -330,14 +177,6 @@ footer {
     font-weight: bold;
 }
 
-/* Toolbar icon */
-.toolbar-icon {
-    margin-right: 10px;
-    fill: currentColor; /* Ensures the icon color matches text color */
-    width: 20px;
-    height: 20px;
-}
-
 /* Toolbar toggle button */
 .toolbar-toggle {
     position: fixed;
@@ -349,7 +188,6 @@ footer {
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
-    transition: background-color 0.3s ease;
     z-index: 1100;
 }
 
@@ -361,5 +199,3 @@ footer {
 .toolbar-toggle:hover {
     background-color: #2bb89f;
 }
-
-

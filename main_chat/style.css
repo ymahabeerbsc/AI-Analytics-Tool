@@ -98,7 +98,7 @@ body {
     text-align: left; /* Align text to the left */
 }
 
-/* User messages */
+/* User messages: Old formatting */
 .chat-bubble.user {
     align-self: flex-end;
     background-color: #444; /* Match the bot bubble color */
@@ -106,9 +106,10 @@ body {
     width: fit-content; /* Keep user messages smaller */
     max-width: 80%; /* Cap user message width */
     text-align: left; /* Ensure user text is also left-aligned */
+    white-space: normal; /* Default behavior (collapses spaces and ignores newlines) */
 }
 
-/* Bot messages */
+/* Bot messages: Formatted behavior */
 .chat-bubble.bot {
     align-self: flex-start;
     background-color: #27272F; /* Same as the background color */
@@ -116,7 +117,9 @@ body {
     width: calc(100% - 20px); /* Full width minus padding */
     margin-left: 10px; /* Align with the chatbar padding */
     text-align: left; /* Ensure bot text is left-aligned */
+    white-space: pre-line; /* Allow line breaks but collapse multiple spaces */
 }
+
 
 
 /* Chat images */

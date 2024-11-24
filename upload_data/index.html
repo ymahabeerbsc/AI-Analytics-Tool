@@ -13,6 +13,15 @@
             <h1>Upload Data</h1>
         </header>
 
+        <section id="upload-container">
+            <input type="file" id="csv-upload" accept=".csv" />
+        </section>
+
+        <section id="data-summary" class="data-container">
+            <h1 class="data-container-header">Column Data Types</h1>
+            <div id="column-details"></div>
+        </section>
+
         <main>
             <!-- Bottom Container -->
             <div class="bottom-container" id="bottom-container">
@@ -54,6 +63,7 @@
     <!-- <button id="collapse-bottom-button" class="collapse-bottom">⮝</button> -->
     <script src="script.js"></script>
     <script src="../chatbot.js"></script>
+    <script src="uploadAI.js"></script>
 
 </body>
 </html>

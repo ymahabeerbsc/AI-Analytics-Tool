@@ -7,26 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="page-container">
         <!-- View Data Title -->
         <header id="header">
             <h1>Question History</h1>
         </header>
 
-        <main>
-            <!-- Bottom Container -->
-            <div class="bottom-container" id="bottom-container">
-                <div class="chatbar">
-                    <input type="text" placeholder="Type your message here" id="chatbot-input">
-                    <button class="send-button" id="send-chatbot-message">➤</button>
-                </div>
-                <footer>
-                    <p>This chatbot can make mistakes. Check important info.</p>
-                </footer>
-            </div> 
-            <!-- Caret Button -->
-            <button id="collapse-chatbar" class="collapse-chatbar">⮟</button>           
-        </main>
+        <!-- Chat Logs Section -->
+        <section id="chat-container">
+            <h1>Chat Logs</h1>
+            <div id="chat-logs"></div> <!-- Container to display chat logs -->
+        </section>
     </div>
 
     <!-- Collapsible Toolbar -->
@@ -53,7 +44,6 @@
 
     <!-- <button id="collapse-bottom-button" class="collapse-bottom">⮝</button> -->
     <script src="script.js"></script>
-    <script src="../chatbot.js"></script>
 
 </body>
 </html>
